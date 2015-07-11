@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal Website">
+    <meta name="author" content="Hsiang-Ho Brian Lin">
+    <!--link rel="shortcut icon" href="assets/ico/favicon.ico"-->
+
+    <title>Brian Lin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Brian Lin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="mlink" data-target="#about">About FuzzyInput</a></li>
+            <li><a class="mlink" data-target="#example">Examples</a></li>
+            <li><a class="mlink" data-target="#algorithm">Algorithm</a></li>
+            <li><a class="mlink" data-target="#code">Source Code</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-4">
+					<h4>Type a word below to get candidates</h4>
+					<h1><input id="input" type="text" class="form-control" value="windrrfu"></h1>
+                    <div class="result">
+                        <p></p>
+                    </div>
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+	</div><! --/headerwrap -->
+
+    <div class="whiteback">
+	    <div id="about" class="container">
+		    <div class="row mt mb">
+			    <h1 class="centered">About</h1>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-5">
+                    <p>FuzzyInput is a spelling autocorrector project inspired by iOS autocorrector (Fig. 1). FuzzyInput not only corrects traditional edits like insertion (add a letter) and deletion (remove a letter), it also corrects spelling based on keyboard vicinity. It is a result of me building my own spelling autocorrector that emulates the iOS one.</p>
+                    <p>Keyboard vicinity is the idea that a spelling mistake might be caused by typing one letter that is near the intended one on the keyboard. Based on the idea, we can correct an edit by trying out the neighbors of a letter (Fig. 2). As people are relying more on smartphones, which usually have tiny a virtual keyboard on the touch screen, keyboard vicinity correction has become more important for better user-experience.</p>
+                    <p>The following are some inputs examples and their candidates. You can try them out in the above text area.</p>
+                </div>
+                <div class="col-md-3">
+                    <p class="centered">
+                    <img class="img-responsive center-block" src="/assets/img/ios.png" title="ios"/>
+                    Fig. 1
+                    </p>
+                    <p class="centered">
+                    <img class="img-responsive center-block" src="/assets/img/map.png" title="key_map"/>
+                    Fig. 2
+                    </p>
+                </div>
+                <div class="col-md-2">
+                </div>
+		    </div><! --/row -->
+	    </div><! --/container -->
+    </div>
+
+    <div class="grayback">
+	    <div id="example" class="container">
+		    <div class="row mt mb">
+                <div div class="col-md-12">
+			    <h1 class="centered">Examples</h1>
+                    <div class="row mt mb">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-4">
+                        <h3>Completion Case</h3>
+                        <p>
+                            <h4>"examp"</h4>
+                            <ul>
+                                <li>"example"</li>
+                                <li>"became"</li>
+                                <li>"camp"</li>
+                                <li>"campaign"</li>
+                                <li>"escape</li>
+                            </ul>
+                            <h4>"comple"</h4>
+                            <ul>
+                                <li>"complete"</li>
+                                <li>"simple"</li>
+                                <li>"completely"</li>
+                                <li>"competition"</li>
+                            </ul>
+                        </p>
+                        </div>
+                        <div class="col-md-4">
+                        <div>
+                        <h3>Keyboard Vicinity Case</h3>
+                        <p>
+                            <h4>"kkir"</h4>
+                            <ul>
+                                <li>"like"</li>
+                                <li>"little"</li>
+                            </ul>
+                            <h4>"foeeigb"</h4>
+                            <ul>
+                                <li>"foreign"</li>
+                            </ul>
+                            <h4>"sxhedil"</h4>
+                            <ul>
+                                <li>"scheduled"</li>
+                                <li>"schedule"</li>
+                            </ul>
+                            <h4>"auccess"</h4>
+                            <ul>
+                                <li>"success"</li>
+                                <li>"successful"</li>
+                            </ul>
+                        </p>
+                        </div>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                    <div class="row mt mb">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-4">
+                        <div>
+                        <h3>Deletion Case</h3>
+                        <p>
+                            <h4>"eucation"</h4>
+                            <ul>
+                                <li>"education"</li>
+                                <li>"educational"</li>
+                            </ul>
+                            <h4>"drection"</h4>
+                            <ul>
+                                <li>"direction"</li>
+                                <li>"reaction"</li>
+                            </ul>
+                        </p>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                            <h3>Insertion Case</h3>
+                            <p>
+                            <h4>"recommennd"</h4>
+                            <ul>
+                                <li>"recommended"</li>
+                                <li>"recommend"</li>
+                            </ul>
+                            <h4>"neccessary"</h4>
+                            <ul>
+                                <li>"necessary"</li>
+                            </ul>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                </div>
+		    </div><! --/row -->
+	    </div><! --/container -->
+    </div>
+	
+    <div class="whiteback">
+	    <div id="algorithm" class="container">
+		    <div class="row mt mb">
+			    <h1 class="centered">Algorithm</h1>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>Building Trie</h3>
+                        <p>Before searching for candidates, we first build our trie data structure with all the words in the dictionary. I picked <a href="http://www.insightin.com/esl/">www.insightin.com/esl</a> for a list of most frequently used English words. When building the trie, we start from the most frequent one and end with the least frequent one. We also store the frequency ranking of each word in its trie node, so we can later rank our candidates.</p>
+<pre>
+abc = 1
+add = 1
+if aa :
+    pass
+</pre>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+		    </div><! --/row -->
+	    </div><! --/container -->
+    </div>
+
+    <div class="grayback">
+	    <div id="code" class="container">
+		    <div class="row mt mb">
+			    <h1 class="centered">Source Code</h1>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-8">
+                        <p>test</p>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+		    </div><! --/row -->
+	    </div><! --/container -->
+    </div>
+
+	<div id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p>h.lin <i class="fa fa-at"></i> columbia.edu</p>
+				</div>
+				<div class="col-lg-4">
+                    <p>Living in the amazing NYC</p>
+				</div>
+				<div class="col-lg-4">
+					<p>&copy; brianlin.info <script type="text/javascript">document.write(new Date().   getFullYear());</script></p>
+				</div>
+			</div>
+		</div>
+	</div><! --/footerwrap -->
+	
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/fuzzy.js"></script>
+  </body>
+</html>

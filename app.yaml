@@ -1,0 +1,41 @@
+application: brianlininfo
+version: 1
+runtime: python27 
+api_version: 1 
+threadsafe: true
+
+handlers: 
+    - url: /assets/css
+      static_dir: assets/css
+    - url: /assets/img
+      static_dir: assets/img
+    - url: /assets/js
+      static_dir: assets/js
+    - url: /assets/fonts
+      static_dir: assets/fonts
+    - url: /apple-touch-icon-precomposed.png
+      static_files: apple-touch-icon-precomposed.png
+      upload: apple-touch-icon-precomposed.png
+    - url: /favicon.ico
+      static_files: favicon.ico
+      upload: favicon.ico
+    - url: /fuzzyapp
+      script: scripts.fuzzyapp.application
+    - url: /(.+)
+      script: scripts.main.application
+    #- url: /(.+)
+    #  static_files: public/\1
+    #  upload: public/(.*)
+    - url: /
+      static_files: public/index.html
+      upload: public/index.html
+
+libraries:
+    - name: webapp2
+      version: latest
+    - name: jinja2
+      version: latest 
+    - name: markupsafe 
+      version: latest
+    - name: ssl
+      version: latest
