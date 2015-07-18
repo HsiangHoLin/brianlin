@@ -9,11 +9,7 @@ import fuzzyengine
 
 template_env = jinja2.Environment(autoescape = True, extensions = ['jinja2.ext.autoescape'], loader=jinja2.FileSystemLoader(os.getcwd()))
 
-fuzzyengine.init()
-
-with open('wordlist/list.txt', 'r') as f:
-    for line in f:
-        fuzzyengine.build(line)
+fuzzyengine.load('wordlist/list.txt')
 
 class fuzzyHandler(webapp2.RequestHandler):
     def get(self):
