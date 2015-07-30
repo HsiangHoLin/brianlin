@@ -1,14 +1,13 @@
 $(document).ready(function () {
-
+    
     $(".mlink").click(function(){
         var target = this.getAttribute('data-target');
         $('html, body').animate({
            scrollTop: $(target).offset().top
-        }, 'slow');
+        }, 800, 'easeOutCubic');
     });
 
     var myVar = setInterval(function () {myTimer()}, 1000);
-
 });
 
 var last_str = '';
