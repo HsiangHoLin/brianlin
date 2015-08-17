@@ -221,7 +221,7 @@
                         <p>Before searching for candidates, we first build our trie data structure with all the words in the dictionary. I picked <a href="http://www.insightin.com/esl/">www.insightin.com/esl</a> for a list of most frequently used English words. When building the trie, we start from the most frequent one and end with the least frequent one. We also store the frequency ranking of each word in its trie node, so we can later rank our candidates. For instance, the first word
                         "the" has rank 1 and the second word "of" has rank 2.</p>
                         <h3>Searching for Candidates</h3>
-                        <p>For every letter in the input word, we try to treat it as one of the following case and move on to the next letter.</p>
+                        <p>For every letter in the input word, we try to treat it as one of the following case and move on to the next letter in a recursive way (depth-first search).</p>
                         <p>1. The letter is a normal match. We check if there is a child node with the letter which is reachable from our current trie node. If yes, we traverse to the child node and continue to check the next letter.</p>
                         <p>2. We treat it as an insertion case by ignoring the letter and continue to match the next letter with our current trie node.</p>
                         <p>3. We treat it as a deletion case by moving to one of the child node of the current trie node and match the letter.</p>
@@ -257,7 +257,15 @@ def dfs(node, pos, spell, results, insert, delete, fuzz):
             dfs(node.child_node[node.child_char[i]], pos, spell, results, 0, 0, 0)
 </pre>
                     <h3>Ranking Candidates</h3>
-                    <p>As previously mentioned, we simply rank the candidates by their ranking in English usage frequency.</p>
+                    <p>As previously mentioned, we can simply rank the candidates by their ranking in English usage frequency, but this is not good enough. Consider a spell A with two candidates B and C, where B has higher ranking in frequency than C, but the edit distance between A and C is less than the edit distance between A and B. Heuristically we will consider C to be more likely the intended spelling. For instance, when user types "hope", both "hope" and "home" are in our candidate list, where "hope" is ranked 451 and "home" ranked 166 respectively. Although "hope" is 0 edit distance from the user input, we will choose "home" over "hope" because 116 is less than 451, if we simply rank by frequency.</p>
+                    <p>If we take a look at how the dfs search works, we can find out the candidates with less edit distance get collected more earlier than candidates with more edit distance. We can then generate a final score by modifying the frequency ranking with the candidate's position in the list, as the following code shows.</p>
+<pre>
+        if node.word and node.word not in results:
+            #results[node.word] = node.pri # old
+            results[node.word] = node.pri * (1 - pow(0.95, len(results) + 1)) # new
+</pre>
+                    <p>Here a candidate is added to the Python dictionary with its final score as its value. The score is calculated as the frequency ranking multiplied by a factor "(1 - pow(0.95, len(results) + 1)), which starts close to 0 when the dictionary size is small and then grow toward its horizontal asymptote y = 1. This way, a candidate with less edit distance will have a final score that is its frequency ranking multiplied by a smaller number between 0 and 1, generating a lower score than a candidate with more edit distance. 
+                    </p>
                     </div>
                     <div class="col-md-2">
                     </div>
