@@ -9,13 +9,14 @@ import fuzzyengine
 
 template_env = jinja2.Environment(autoescape = True, extensions = ['jinja2.ext.autoescape'], loader=jinja2.FileSystemLoader(os.getcwd()))
 
-fuzzyengine.load('wordlist/list.txt')
+engine = fuzzyengine.init()
+engine.load('wordlist/list.txt')
 
 class fuzzyHandler(webapp2.RequestHandler):
     def get(self):
         try:
             value = self.request.GET['q']
-            result = fuzzyengine.search(value)
+            result = engine.search(value)
             j_result = json.dumps(result[:5])
         except:
             j_result = json.dumps([""])
