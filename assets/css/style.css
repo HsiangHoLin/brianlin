@@ -24,14 +24,14 @@ body {
 }
 
 ::-moz-selection {
-    background: #8fc7eb;
-    color: #2f2f2f;
+    background: #181B2A;
+    color: #ffdae0;
     text-shadow: none;
 }
 
 ::selection {
-    background: #8fc7eb;
-    color: #2f2f2f;
+    background: #181B2A;
+    color: #ffdae0;
     text-shadow: none;
 }
 
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-default .navbar-brand {
-	color: #8fc7eb;
+	color: #181B2A;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -95,18 +95,18 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-default {
 	/*background-color: transparent;
 	border-color: transparent;*/
-	background-color: #2f2f2f;
-	border-color: #2f2f2f;
+	background-color: #ffdae0;
+	border-color: #ffdae0;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #8fc7eb;
+	color: #181B2A;
 	background-color: transparent;
-	border-bottom: 2px solid #8fc7eb
+	border-bottom: 2px solid #181B2A
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: #8fc7eb;
+	color: #181B2A;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a > i {
-	color: #8fc7eb;
+	color: #181B2A;
 }
 
 a > i:hover {
@@ -134,7 +134,7 @@ a > i:hover {
 }
 
 a > i {
-	color: #8fc7eb;
+	color: #181B2A;
 }
 
 a > i:hover {
@@ -142,7 +142,7 @@ a > i:hover {
 }
 
 .result {
-    background-color: #2f2f2f;
+    background-color: #ffdae0;
     color: #f2f2f2;
     height: 150px;
 }
@@ -156,7 +156,7 @@ a > i:hover {
 }
 
 p > a:hover {
-	color: #8fc7eb;
+	color: #181B2A;
 }*/
 
 /* ==========================================================================
@@ -167,12 +167,12 @@ p > a:hover {
    Wrap Sections
    ========================================================================== */
 
-#headerwrap {
-	background: url(../img/back2.jpg) no-repeat center top;
+#pic1 {
+	background: url(../img/1.jpg) no-repeat center top;
 	margin-top: -70px;
 	padding-top: 250px;
 	text-align:center;
-	background-attachment: relative;
+	background-attachment: fixed;
 	background-position: center center;
     background-repeat: no-repeat;
 	min-height: 650px;
@@ -190,7 +190,30 @@ p > a:hover {
     background-size: cover;
 }
 
-#headerwrap h1 {
+#pic2 {
+	background: url(../img/2.jpg) no-repeat center top;
+	margin-top: -70px;
+	padding-top: 250px;
+	text-align:center;
+	background-attachment: fixed;
+	background-position: center center;
+    background-repeat: no-repeat;
+	min-height: 650px;
+    height: 100%;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.headerwrap h1 {
 	color:#ffffff;
 	padding-top: 10px;
 	padding-bottom: 20px;
@@ -199,7 +222,7 @@ p > a:hover {
 	font-weight: bold;
 }
 
-#headerwrap h4 {
+.headerwrap h4 {
 	font-weight: 400;
 	color: #ffffff
 }
@@ -224,22 +247,22 @@ p > a:hover {
 }
 
 #social i:hover {
-	color: #8fc7eb
+	color: #181B2A
 }
 
 #footerwrap {
 	padding-top: 70px;
 	padding-bottom: 50px;
-	background-color: #2f2f2f;
+	background-color: #ffdae0;
 }
 
 #footerwrap p {
-	color: #f2f2f2;
+	/*color: #9CA7C7;*/
 	margin-left: 10px;
 }
 
 #footerwrap a {
-    color: #f2f2f2;
+    /*color: #9CA7C7;*/
 }
 
 #workwrap {	

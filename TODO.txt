@@ -1,0 +1,13 @@
+update example: OK
+
+update js animation to faster: OK
+
+update: lg -> sm: OK
+
+update description in ranking section: OK
+
+use a wrapper for engine operations: OK
+
+update resume 1. wording 2. fuzzyinput's description
+
+update mobile jumbotron: use small one as default, media query chnage to bigger one
