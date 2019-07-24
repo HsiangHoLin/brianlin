@@ -1,6 +1,7 @@
     dev_appserver.py --datastore_path='./tmp/datastore.db' ./
 
 Use the following command to deploy:
+    gcloud auth login (first time)
     gcloud app deploy --project brianlininfo
 
 Make Sure the admin login setting
